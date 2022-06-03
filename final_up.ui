@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1455</width>
+    <height>1032</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow  { background-color: white ; color: white;}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QSplitter" name="splitter">
+       <property name="styleSheet">
+        <string notr="true">QSplitter { background-color: teal ; color: white;}</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <widget class="QWidget" name="layoutWidget">
+        <layout class="QVBoxLayout" name="all_interpolation_labels_layout">
+         <item>
+          <widget class="QLabel" name="interpolation_label">
+           <property name="font">
+            <font>
+             <pointsize>22</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel { color: white;}</string>
+           </property>
+           <property name="text">
+            <string>Interpolation setting</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="choose_chunk_layout">
+           <item>
+            <widget class="QLabel" name="chunk_label">
+             <property name="font">
+              <font>
+               <family>Neue Haas Grotesk Text Pro</family>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel { color: white;}</string>
+             </property>
+             <property name="text">
+              <string>Choose the chunk :  </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="comboBox_of_chunk">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox  { background-color: white ; color: black;}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="choose_order_layout">
+           <item>
+            <widget class="QLabel" name="degree_label">
+             <property name="font">
+              <font>
+               <family>Neue Haas Grotesk Text Pro</family>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel { color: white;}</string>
+             </property>
+             <property name="text">
+              <string>Order of polynomial :</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="degree1">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QSpinBox  { background-color: white ; color: black;}</string>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="number_of_chunks_layout">
+           <item>
+            <widget class="QLabel" name="number_of_chunk_label">
+             <property name="font">
+              <font>
+               <family>Neue Haas Grotesk Text Pro</family>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel { color: white;}</string>
+             </property>
+             <property name="text">
+              <string>Number of chunks :  </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="chunk1">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QSpinBox  { background-color: white ; color: black;}</string>
+             </property>
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="portion_signal_layout">
+           <item>
+            <widget class="QLabel" name="portion_label">
+             <property name="font">
+              <font>
+               <family>Neue Haas Grotesk Text Pro</family>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel { color: white;}</string>
+             </property>
+             <property name="text">
+              <string>Portion of signal :     </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="portion">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QSpinBox  { background-color: white ; color: black;}</string>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="singleStep">
+              <number>10</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="open_button">
+             <property name="font">
+              <font>
+               <family>Neue Haas Grotesk Text Pro</family>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton { background-color: white ; color: black;}</string>
+             </property>
+             <property name="text">
+              <string>Open the signal</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_2">
+        <layout class="QVBoxLayout" name="error_map_tab_layout">
+         <item>
+          <layout class="QVBoxLayout" name="error_map_label">
+           <item>
+            <widget class="QLabel" name="errormap_label">
+             <property name="font">
+              <font>
+               <pointsize>22</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel { color: white;}</string>
+             </property>
+             <property name="text">
+              <string>Error map setting</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="spacer_errormap_label">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="constant_parameter_layout">
+           <item>
+            <widget class="QLabel" name="constant_parameter_label">
+             <property name="font">
+              <font>
+               <family>Neue Haas Grotesk Text Pro</family>
+               <pointsize>16</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel { color: white;}</string>
+             </property>
+             <property name="text">
+              <string>Constant parameter :</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="constant_choose">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox  { background-color: white ; color: black;}</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>None</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>overlapping</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>chunks</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>order of interpolation</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="constant_value_label">
+             <property name="font">
+              <font>
+               <family>Neue Haas Grotesk Text Pro</family>
+               <pointsize>16</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel { color: white;}</string>
+             </property>
+             <property name="text">
+              <string>Constant value :</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="other_parameter_value">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QSpinBox  { background-color: white ; color: black;}</string>
+             </property>
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>25</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="x_axis_parameter_layout">
+           <item>
+            <widget class="QLabel" name="x_axis_parameter_label">
+             <property name="font">
+              <font>
+               <family>Neue Haas Grotesk Text Pro</family>
+               <pointsize>16</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel { color: white;}</string>
+             </property>
+             <property name="text">
+              <string>X-axis parameter:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="x_axis_choose">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox  { background-color: white ; color: black;}</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>None</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>overlapping</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>chunks</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>order of interpolation</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="y_axis_parameter_label">
+           <item>
+            <widget class="QLabel" name="y_axis_label">
+             <property name="font">
+              <font>
+               <family>Neue Haas Grotesk Text Pro</family>
+               <pointsize>16</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel { color: white;}</string>
+             </property>
+             <property name="text">
+              <string>Y-axis parameter :</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="y_axis_choose">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox  { background-color: white ; color: black;}</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>None</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>overlapping</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>chunks</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>order of interpolation</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="spacer_button_errormap">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="generate_map_layout">
+           <item>
+            <spacer name="generate_map_spacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="start_cancel">
+             <property name="font">
+              <font>
+               <family>Neue Haas Grotesk Text Pro</family>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton { background-color: white ; color: black;}</string>
+             </property>
+             <property name="text">
+              <string>Calculate error map</string>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="generate_map_spacer2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="progressbar_layout">
+           <item>
+            <spacer name="progressbar_spacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="progressBar">
+             <property name="styleSheet">
+              <string notr="true">QProgressBar { color: white;}</string>
+             </property>
+             <property name="value">
+              <number>24</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="progressbar_spacer2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="warning">
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{color: yellow}</string>
+           </property>
+           <property name="text">
+            <string>*Please complete your data</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="warning_2">
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{color: yellow}</string>
+           </property>
+           <property name="text">
+            <string>*Please don't choose the same option more than once</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="button_spacer_errormapsetting">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="PlotWidget" name="graphicsView"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="Equation_label">
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>16</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel { color: teal;}</string>
+          </property>
+          <property name="text">
+           <string>Interpolation equation :</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="equation_layout"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_Error">
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>16</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel { color: teal;}</string>
+          </property>
+          <property name="text">
+           <string>Interpolation error:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <spacer name="spacer_interpolationerror">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="Error_label">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {  color: black;}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="spacer_interpolationerror2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="errormap_title">
+          <property name="font">
+           <font>
+            <pointsize>22</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel { color: teal;}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_errormap" native="true"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1455</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
